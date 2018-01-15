@@ -13,6 +13,7 @@
 
 Route::get('/', function () {
     // return view('welcome');
-    return view('welcomevue');
+    return view('dashboard');
 });
 Route::get('getusers', 'UserController@getUsers');
+Route::resource('tasks','TaskController');
