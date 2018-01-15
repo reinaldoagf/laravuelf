@@ -12382,48 +12382,20 @@ return /******/ (function(modules) { // webpackBootstrap
 });
 ;
 //# sourceMappingURL=axios.map
-Vue.component('list-component',{
-	props    : ['list'],
-	template : `<ul class="list-group">
-					<li v-for="item in list" class="list-group-item">
-						 {{item.name}} - <strong>{{item.email}}</strong> 
-					</li>
-				</ul>`,
-});
-//urls
-var urlUsers='https://jsonplaceholder.typicode.com/users';
-//objeto vue
 new Vue({
-	el:'#main',
+	el:'#crud',
 	created:function(){
-		this.getUsers();
-		// this.getAlbums();
+		this.getKeeps();
 	},
 	data:{
-		users:[],
-		albums:[
-			{name:'album1',
-			email:'album1@gmail.com'},
-			{name:'album2',
-			email:'album2@gmail.com'},
-			{name:'comun3',
-			email:'album3@gmail.com'},],
-		search:'',
+		keeps:[]
 	},
 	methods:{
-		getUsers:function(){
-			//Con axios
-			axios.get(urlUsers).then(response=>{
-				this.users=response.data
+		getKeeps:function () {
+			var urlKeeps='tasks';
+			axios.get(urlKeeps).then(response=>{
+				this.keeps=response.data
 			});
-		},
-	},
-	computed:{
-		filterUser:function(){
-			return this.users.filter((item)=>item.name.includes(this.search));
-		},
-		filterAlbum:function(){
-			return this.albums.filter((item)=>item.name.includes(this.search));
 		}
 	}
 });
