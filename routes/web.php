@@ -17,3 +17,6 @@ Route::get('/', function () {
 });
 Route::get('getusers', 'UserController@getUsers');
 Route::resource('tasks','TaskController');
+Route::resource('users','UserController');
+//test
+Route::get('getrandomuser', 'UserController@getRandomUser');

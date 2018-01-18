@@ -1,6 +1,6 @@
 @extends('app')
 @section('content')
-<div id="crud" class="row">
+<div id="task-crud" class="row">
 	 <div class="col-xs-12">
 	 	<h1 class="page-header">CRUD Laravel y VUEjs</h1>
 	 </div>
