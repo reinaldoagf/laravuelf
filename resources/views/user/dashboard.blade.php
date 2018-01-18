@@ -6,7 +6,7 @@
 	 </div>
 	 <div class="col-sm-7">
 	 	<h3 >Usuarios participantes</h3>
-	 	<table class="table table-hover table-sprite">
+	 	<table class="table table-hover table-striped">
 	 		<thead>
 	 			<tr>
 	 				<th>ID</th>

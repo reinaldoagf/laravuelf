@@ -12396,7 +12396,13 @@ new Vue({
 			axios.get(urlKeeps).then(response=>{
 				this.keeps=response.data
 			});
-		}
+		},
+		deleteKeep:function (keep) {
+			var urlKeep='tasks/'+keep.id;
+			axios.delete(urlKeep).then(response=>{
+				this.getKeeps();
+			});
+		},
 	}
 });
 new Vue({

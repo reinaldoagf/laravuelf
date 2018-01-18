@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\logic\RandomUser;
 class UserController extends Controller
 {
     /**
@@ -83,19 +82,19 @@ class UserController extends Controller
     {
         //
     }
-    //retornar ususarios
+    //retornar usuarios
     public function getUsers()
     {
-        $randomUser='';
-        $users=User::orderBy('id','DESC')->take(10)->get();
-        $response = array('results' => 'ok', 'data' => $users, 'randomUser'=>$randomUser);
+        $randomUser  = '';
+        $users       = User::orderBy('id','DESC')->take(10)->get();
+        $response    = array('results' => 'ok', 'data' => $users, 'randomUser'=>$randomUser);
         return $response;
     }
     public function getRandomUser()
     {
-        $users= $this->getUsers();
-        $randomUser=RandomUser::getRandomUser($users['data']);
-        $response = array('randomUser'=>$randomUser);
+        $users       = $this->getUsers();
+        $randomUser  = User::getRandomUser($users['data']);
+        $response    = array('randomUser'=>$randomUser);
         return $response;
     }
 }
