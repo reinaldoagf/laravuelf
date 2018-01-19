@@ -17,6 +17,7 @@ new Vue({
 			var urlKeep='tasks/'+keep.id;
 			axios.delete(urlKeep).then(response=>{
 				this.getKeeps();
+				toastr.success('Tarea eliminada satisfactoriamente');
 			});
 		},
 	}
