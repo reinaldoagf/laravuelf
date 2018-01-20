@@ -16,7 +16,7 @@ new Vue({
             'from'         : 0, //Desde
             'to'           : 0, //Hasta
 		},
-		offset             : 5,
+		offset             : 3,
 	},
 	computed:{
 		isActived:function(){
@@ -32,7 +32,7 @@ new Vue({
 			 }
 			 var to= from+(this.offset*2); 
 			 if (to>=this.pagination.last_page) {
-			 	to=this,pagination.last_page;
+			 	to=this.pagination.last_page;
 			 }
 			 var pagesArray=[];
 			 while(from<=to){
