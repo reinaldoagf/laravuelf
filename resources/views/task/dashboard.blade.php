@@ -27,6 +27,9 @@
 	 	</table>
 	 	<nav>
 		 	<ul class="pagination">
+		 		<li v-if="pagination.current_page - offset > 1">
+		 		    <a href="#" @click.prevent="changePage(1)"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+		 		</li>
 		 		<li v-if="pagination.current_page > 1">
 		 			<a href="#" @click.prevent="changePage(pagination.current_page-1)" ><span>Atrás</span></a>
 		 		</li>
@@ -35,6 +38,9 @@
 		 		</li>
 		 		<li v-if="pagination.current_page < pagination.last_page">
 		 			<a href="#"  @click.prevent="changePage(pagination.current_page+1)"><span>Siguiente</span></a>
+		 		</li>
+		 		<li v-if="pagination.current_page+ offset < pagination.last_page">
+		 		    <a href="#" @click.prevent="changePage(pagination.last_page)"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 		 		</li>
 		 	</ul>
 	 	</nav>

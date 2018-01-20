@@ -16,7 +16,7 @@ new Vue({
             'from'         : 0, //Desde
             'to'           : 0, //Hasta
 		},
-		offset             : 3,
+		offset             : 4,
 	},
 	computed:{
 		isActived:function(){
