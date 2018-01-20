@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('task/dashboard');
 });
 Route::get('getusers', 'UserController@getUsers');
-Route::resource('tasks','TaskController');
+Route::resource('tasks','TaskController',['except'=>['create','show']]);
 Route::resource('users','UserController');
 //test
 Route::get('getrandomuser', 'UserController@getRandomUser');

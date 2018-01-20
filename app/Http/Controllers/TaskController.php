@@ -14,19 +14,10 @@ class TaskController extends Controller
     public function index()
     {
         //
-        $tasks=Task::get();
+        $tasks=Task::orderBy('id','DESC')->get();
         return $tasks;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //formulario
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -37,19 +28,12 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+            'keep'=>'required'
+            ]);
+        Task::create($request->all());
+        return;
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -73,6 +57,11 @@ class TaskController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request,[
+            'keep'=>'required',
+            ]);
+        Task::find($id)->update($request->all());
+        return;
     }
 
     /**
